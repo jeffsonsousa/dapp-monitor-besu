@@ -1,0 +1,62 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+# Rule files specifies a list of globs. Rules and alerts are read from
+# all matching files.
+rule_files:
+  - /etc/prometheus/rules.yml
+  - rules/*.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ["192.168.18.10:9093"] # ou IP:PORTA reais do Alertmanager
+
+scrape_configs:
+  # Job para coletar as métricas de outras organizações.
+  # Inclua aqui os alvos das outras organizações (Prometheus expostos).
+
+  - job_name: besu_rpc_exporter_local
+    static_configs:
+      - targets: ["192.168.18.10:8000"]
+    metrics_path: /metrics
+
+  - job_name: machine_exporter_local
+    static_configs:
+      - targets: ["192.168.18.10:9101"]
+    metrics_path: /metrics
+
+  # Job para coleta das métricas locais.
+  # Inclua aqui os alvos de sua organização (métricas do boot, validator, writer e prometheus)
+  - job_name: besu_nodes_local
+
+    basic_auth:
+      username: "admin"
+      password: "@#$%prometheus" # aqui pode ser usado <password_file>
+
+    static_configs:
+      - targets: ["192.168.18.10:9545"]
+        labels:
+          node: "node1"
+          organization: "Cpqd"
+      - targets: ["192.168.18.10:9546"]
+        labels:
+          node: "node2"
+          organization: "Cpqd"
+      - targets: ["192.168.18.10:9547"]
+        labels:
+          node: "node3"
+          organization: "Cpqd"
+      - targets: ["192.168.18.10:9548"]
+        labels:
+          node: "node4"
+          organization: "Cpqd"
+      - targets: ["192.168.18.10:9549"]
+        labels:
+          node: "node5"
+          organization: "Cpqd"
+      - targets: ["192.168.18.10:9550"]
+        labels:
+          node: "node6"
+          organization: "Cpqd"

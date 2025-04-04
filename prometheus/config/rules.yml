@@ -1,0 +1,75 @@
+groups:
+  - name: besu_alerts
+    rules:
+      - alert: LowPeerCount
+        expr: besu_rpc_peer_count < 2
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Número de peers conectado é muito baixo"
+          description: "Peers conectados = {{ $value }}. Pode indicar isolamento de rede."
+
+      - alert: TxPoolCongestion
+        expr: besu_rpc_txpool_total_transactions > 100
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "TxPool congestionado"
+          description: "Mais de 100 transações pendentes no txpool por mais de 2 minutos."
+
+      - alert: StalledBlockProduction
+        expr: besu_rpc_stalled_blocks > 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Produção de blocos travada"
+          description: "Nenhum novo bloco produzido nos últimos ciclos."
+
+      - alert: SlowBlockProduction
+        expr: rate(besu_rpc_block_number[5m]) < 0.03
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Blocos estão sendo minerados muito lentamente"
+          description: "Produção de blocos abaixo da média (pode indicar lentidão na rede ou travamento parcial)."
+
+      # ALERTA COMPLEXO: Validator inativo (exemplo de template, requer agregação externa)
+      - alert: InactiveValidator1
+        expr: absent(besu_rpc_block_proposer{proposer="0x98c1334496614aed49d2e81526d089f7264fed9c"})
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Validator não propôs blocos recentemente"
+          description: "O Validator 0x98c1334496614aed49d2e81526d089f7264fed9c não apareceu nos últimos blocos. Verifique status do validador."
+
+      - alert: InactiveValidator2
+        expr: absent(besu_rpc_block_proposer{proposer="0x93917cadbace5dfce132b991732c6cda9bcc5b8a"})
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Validator não propôs blocos recentemente"
+          description: "O Validator 0x93917cadbace5dfce132b991732c6cda9bcc5b8a não apareceu nos últimos blocos. Verifique status do validador."
+
+      - alert: InactiveValidator3
+        expr: absent(besu_rpc_block_proposer{proposer="0x27a97c9aaf04f18f3014c32e036dd0ac76da5f18"})
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Validator não propôs blocos recentemente"
+          description: "O Validator 0x27a97c9aaf04f18f3014c32e036dd0ac76da5f18 não apareceu nos últimos blocos. Verifique status do validador."
+
+      - alert: InactiveValidator4
+        expr: absent(besu_rpc_block_proposer{proposer="0xce412f988377e31f4d0ff12d74df73b51c42d0ca"})
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Validator não propôs blocos recentemente"
+          description: "O Validator 0xce412f988377e31f4d0ff12d74df73b51c42d0ca não apareceu nos últimos blocos. Verifique status do validador."
