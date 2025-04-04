@@ -1,0 +1,18 @@
+global:
+  resolve_timeout: 5m
+  smtp_smarthost: "smtp.gmail.com:587"
+  smtp_from: "tasociety.company@gmail.com"
+  smtp_auth_username: "tasociety.company@gmail.com"
+  smtp_auth_password: "guyx kiuu heyz ipwv"
+
+route:
+  receiver: email-team
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1h
+
+receivers:
+  - name: email-team
+    email_configs:
+      - to: "jeffson.celeiro@gmail.com"
+        send_resolved: true
