@@ -25,7 +25,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -75,7 +75,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "besu_rpc_peer_count",
@@ -90,7 +90,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -140,7 +140,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "sum(besu_peers_connected_total{node=\"node1\"})- count(ethereum_peer_count)",
@@ -155,7 +155,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -233,7 +233,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "count(ethereum_peer_count)",
@@ -248,7 +248,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Número do Bloco Atual",
       "fieldConfig": {
@@ -295,7 +295,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "besu_rpc_block_number",
@@ -310,7 +310,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -363,7 +363,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "sum by (cpu) (rate(node_cpu_seconds_total{mode!=\"idle\"}[5m]))",
@@ -378,7 +378,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Validadores Ativos",
       "fieldConfig": {
@@ -435,7 +435,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "count(besu_rpc_block_proposer) by (proposer)",
@@ -450,7 +450,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -542,7 +542,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -559,7 +559,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Tx por Bloco",
       "fieldConfig": {
@@ -636,7 +636,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "besu_rpc_block_txcount",
@@ -651,7 +651,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -704,7 +704,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)",
@@ -723,7 +723,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -763,7 +763,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+            "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
           "expr": "ethereum_peer_limit",
@@ -819,7 +819,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "e2722f64-5e1b-409b-b165-c208ab367e2d"
+          "uid": "PBFA97CFB590B2093"
         },
         "definition": "label_values(up, instance)",
         "hide": 0,

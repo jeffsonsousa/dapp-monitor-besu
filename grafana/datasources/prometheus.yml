@@ -6,3 +6,7 @@ datasources:
     access: proxy
     url: http://192.168.18.10:9090
     isDefault: true
+    basicAuth: true
+    basicAuthUser: admin
+    secureJsonData:
+      basicAuthPassword: "@#$%prometheus"
